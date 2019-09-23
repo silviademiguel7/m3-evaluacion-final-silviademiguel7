@@ -5,17 +5,15 @@ import CharacterList from './CharacterList';
 
 class Landing extends React.Component {
     render() {
-        const { characters,
-            inputTextFilter,
-            handleOnChange,
-        } = this.props
+        const { characters, inputTextFilter, handleOnChange } = this.props
         return (
             <main className="main">
                 <Filters
                     inputTextFilter={inputTextFilter}
-                    handleOnChange={handleOnChange}/>
-                <CharacterList characters={characters}
-                    inputTextFilter={inputTextFilter}/>
+                    handleOnChange={handleOnChange} />
+                <CharacterList
+                    characters={characters}
+                    inputTextFilter={inputTextFilter} />
             </main>
         );
     }

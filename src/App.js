@@ -31,7 +31,7 @@ class App extends React.Component {
     const { inputTextFilter, characters } = this.state;
     return (
       <div className="app">
-        <Header/>
+        <Header />
         <Switch>
           <Route exact path="/" render={() => {
             return (
@@ -43,11 +43,12 @@ class App extends React.Component {
           }} />
           <Route path="/character/:id" render={(routerProps) => {
             return (
-              <CharacterDetail id={routerProps.match.params.id} characters={characters} />
+              <CharacterDetail
+                id={routerProps.match.params.id}
+                characters={characters} />
             );
           }} />
         </Switch>
-
       </div>
     );
   }

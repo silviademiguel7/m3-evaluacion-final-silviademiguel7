@@ -13,14 +13,16 @@ class CharacterDetail extends React.Component {
             const episodes = character.episode.length;
             return (
                 <React.Fragment>
-
                     <div className="container-detail">
                         <div className="container-detail__card">
-                            <Link to="/"><div className="return"><i class="fas fa-angle-left"></i>Volver</div></Link>
+                            <Link to="/">
+                                <div className="return">
+                                    <i class="fas fa-angle-left"></i>Volver
+                                </div>
+                            </Link>
                             <div className="card-image-detail">
-                            <img src={character.image} alt={`imagen de ${character.name}`} />
+                                <img src={character.image} alt={`imagen de ${character.name}`} />
                             </div>
-                            
                             <ul className="detail__card-list">
                                 <li className="detail__name">Nombre: {character.name}</li>
                                 <li className="">Status:{(character.status === 'Dead')
@@ -35,7 +37,6 @@ class CharacterDetail extends React.Component {
                             </ul>
                         </div>
                     </div>
-
                 </React.Fragment>
             );
         } else {

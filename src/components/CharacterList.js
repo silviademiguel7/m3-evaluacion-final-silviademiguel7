@@ -6,9 +6,7 @@ import { Link } from 'react-router-dom';
 
 class CharacterList extends React.Component {
     render() {
-        const { characters,
-            inputTextFilter,
-        } = this.props
+        const { characters, inputTextFilter } = this.props
         return (
             <div className="results-container">
                 <ul className="results-list">
@@ -19,8 +17,9 @@ class CharacterList extends React.Component {
                         .map(character => {
                             return (
                                 <li className="item-list" key={character.id}>
-                                    <Link to={`/character/${character.id}`}><CharacterCard character={character} /></Link>
-
+                                    <Link to={`/character/${character.id}`}>
+                                        <CharacterCard character={character} />
+                                    </Link>
                                 </li>
                             );
                         })}
