@@ -1,0 +1,16 @@
+.card{
+    width: 300px;
+}
+.card__data{
+    padding: 20px;
+    text-align: left;
+    font-size: 20px;
+    background-color: #00afc7;
+}
+.card__image{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

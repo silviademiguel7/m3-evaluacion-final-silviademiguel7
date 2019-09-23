@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import './App.css';
+import './App.scss';
 import { getData } from './services/Petition';
 import Header from './components/Header';
 import Landing from './components/Landing';

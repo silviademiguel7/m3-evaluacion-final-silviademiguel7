@@ -1,0 +1,39 @@
+.container-detail {
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+}
+.container-detail__card {
+  width: 500px;
+  height: 200px;
+  font-size: 20px;
+  position: relative;
+  display: grid;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  background-color: #00afc7;
+}
+.detail__card-list {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.return {
+  position: absolute;
+  right: 0;
+  top: -20px;
+}
+.card-image-detail{
+    margin-right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    
+}

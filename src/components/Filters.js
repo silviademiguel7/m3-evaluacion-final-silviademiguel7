@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Filters.scss';
 
 
 class Filters extends React.Component{
@@ -8,7 +9,9 @@ class Filters extends React.Component{
         return(
             <div className="search-container__filterInput">
             <label htmlFor="inputText"></label>
-            <input type="text" name="inputText" id="inputText" placeholder="Filtra por nombre" onChange={handleOnChange} value={inputTextFilter} />
+            <input type="text" 
+            className="input"
+            name="inputText" id="inputText" placeholder="Filtra por nombre" onChange={handleOnChange} value={inputTextFilter} />
         </div>
         );
     }

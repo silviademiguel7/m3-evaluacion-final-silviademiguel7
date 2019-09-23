@@ -11,7 +11,7 @@ class Landing extends React.Component {
             handleOnChange,
         } = this.props
         return (
-            <main>
+            <main className="main">
                 <Filters
                     inputTextFilter={inputTextFilter}
                     handleOnChange={handleOnChange}/>

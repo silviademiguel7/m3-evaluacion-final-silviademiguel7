@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './CharacterDetail.css';
+import './CharacterDetail.scss';
 import { Link } from 'react-router-dom';
 
 class CharacterDetail extends React.Component {
@@ -13,13 +13,16 @@ class CharacterDetail extends React.Component {
             const episodes = character.episode.length;
             return (
                 <React.Fragment>
-                    <Link to="/"><div className="return">Volver</div></Link>
+
                     <div className="container-detail">
                         <div className="container-detail__card">
-                                <img src={character.image} alt={`imagen de ${character.name}`} />
-                           
-                            <ul>
-                                <li className="">Nombre: {character.name}</li>
+                            <Link to="/"><div className="return">Volver</div></Link>
+                            <div className="card-image-detail">
+                            <img src={character.image} alt={`imagen de ${character.name}`} />
+                            </div>
+                            
+                            <ul className="detail__card-list">
+                                <li className="detail__name">Nombre: {character.name}</li>
                                 <li className="">Status:{(character.status === 'Dead')
                                     ? <i className="fas fa-skull-crossbones"></i>
                                     : character.status} </li>
