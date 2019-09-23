@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './CardsList.css';
-import Card from './Card';
+import './CharacterList.css';
+import CharacterCard from './CharacterCard';
 import { Link } from 'react-router-dom';
 
-class CardsList extends React.Component {
+class CharacterList extends React.Component {
     render() {
         const { characters,
             inputTextFilter,
@@ -19,7 +19,7 @@ class CardsList extends React.Component {
                         .map(character => {
                             return (
                                 <li className="item-list" key={character.id}>
-                                    <Link to={`/character/${character.id}`}><Card character={character} /></Link>
+                                    <Link to={`/character/${character.id}`}><CharacterCard character={character} /></Link>
 
                                 </li>
                             );
@@ -31,9 +31,9 @@ class CardsList extends React.Component {
     }
 }
 
-CardsList.propTypes = {
+CharacterList.propTypes = {
     characters: PropTypes.arrayOf(PropTypes.object).isRequired,
     inputTextFilter: PropTypes.string.isRequired,
 }
 
-export default CardsList;
+export default CharacterList;

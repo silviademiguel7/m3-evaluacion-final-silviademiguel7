@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Search from './Search';
-import CardsList from './CardsList';
+import Filters from './Filters';
+import CharacterList from './CharacterList';
 
 class Landing extends React.Component {
 
@@ -12,16 +12,16 @@ class Landing extends React.Component {
         } = this.props
         return (
             <main>
-                <Search
+                <Filters
                     inputTextFilter={inputTextFilter}
                     handleOnChange={handleOnChange}/>
-                <CardsList characters={characters}
+                <CharacterList characters={characters}
                     inputTextFilter={inputTextFilter}/>
             </main>
         );
     }
 }
-CardsList.propTypes = {
+CharacterList.propTypes = {
     characters: PropTypes.arrayOf(PropTypes.object).isRequired,
     inputTextFilter: PropTypes.string.isRequired,
     handleOnChange: PropTypes.func.isRequired,

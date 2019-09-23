@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Detail.css';
+import './CharacterDetail.css';
 import { Link } from 'react-router-dom';
 
 
-class Detail extends React.Component {
+class CharacterDetail extends React.Component {
     render() {
         const { id, characters } = this.props;
         const character = characters.find(character => {
@@ -29,9 +29,9 @@ class Detail extends React.Component {
         );
     }
 }
-Detail.propTypes = {
+CharacterDetail.propTypes = {
     characters: PropTypes.arrayOf(PropTypes.object).isRequired,
     id: PropTypes.string.isRequired
 }
 
-export default Detail;
+export default CharacterDetail;

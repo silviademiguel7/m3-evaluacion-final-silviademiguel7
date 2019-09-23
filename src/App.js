@@ -4,7 +4,7 @@ import './App.css';
 import { getData } from './services/Petition';
 import Header from './components/Header';
 import Landing from './components/Landing';
-import Detail from './components/Detail';
+import CharacterDetail from './components/CharacterDetail';
 
 class App extends React.Component {
   constructor(props) {
@@ -43,7 +43,7 @@ class App extends React.Component {
           }} />
           <Route path="/character/:id" render={(routerProps) => {
             return (
-              <Detail id={routerProps.match.params.id} characters={characters} />
+              <CharacterDetail id={routerProps.match.params.id} characters={characters} />
             );
           }} />
         </Switch>

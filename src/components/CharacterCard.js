@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Card.css';
+import './CharacterCard.css';
 
-class Card extends React.Component {
+class CharacterCard extends React.Component {
     render() {
         const {character}=this.props;
         return (
@@ -18,8 +18,8 @@ class Card extends React.Component {
         );
     }
 }
-Card.propTypes={
+CharacterCard.propTypes={
     character : PropTypes.object  
 }
 
-export default Card;
+export default CharacterCard;

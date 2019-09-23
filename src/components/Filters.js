@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-class Search extends React.Component{
+class Filters extends React.Component{
     render(){
         const {handleOnChange,inputTextFilter}=this.props;
         return(
@@ -12,4 +12,4 @@ class Search extends React.Component{
         );
     }
 }
-export default Search;
+export default Filters;
