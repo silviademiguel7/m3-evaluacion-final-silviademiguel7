@@ -4,7 +4,6 @@ import Filters from './Filters';
 import CharacterList from './CharacterList';
 
 class Landing extends React.Component {
-
     render() {
         const { characters,
             inputTextFilter,

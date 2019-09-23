@@ -16,7 +16,7 @@ class CharacterDetail extends React.Component {
 
                     <div className="container-detail">
                         <div className="container-detail__card">
-                            <Link to="/"><div className="return">Volver</div></Link>
+                            <Link to="/"><div className="return"><i class="fas fa-angle-left"></i>Volver</div></Link>
                             <div className="card-image-detail">
                             <img src={character.image} alt={`imagen de ${character.name}`} />
                             </div>
@@ -45,6 +45,7 @@ class CharacterDetail extends React.Component {
         }
     }
 }
+
 CharacterDetail.propTypes = {
     characters: PropTypes.arrayOf(PropTypes.object).isRequired,
     id: PropTypes.string.isRequired

@@ -26,7 +26,6 @@ class CharacterList extends React.Component {
                         })}
                 </ul>
             </div>
-
         );
     }
 }

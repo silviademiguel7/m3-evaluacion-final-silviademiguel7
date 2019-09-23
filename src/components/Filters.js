@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Filters.scss';
 
-
 class Filters extends React.Component{
     render(){
         const {handleOnChange,inputTextFilter}=this.props;
@@ -16,6 +15,7 @@ class Filters extends React.Component{
         );
     }
 }
+
 Filters.propTypes = {
     inputTextFilter: PropTypes.string.isRequired,
     handleOnChange: PropTypes.func.isRequired,
