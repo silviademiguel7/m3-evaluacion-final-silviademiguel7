@@ -4,7 +4,7 @@ import './CharacterCard.css';
 
 class CharacterCard extends React.Component {
     render() {
-        const {character}=this.props;
+        const { character } = this.props;
         return (
             <div className="card">
                 <div className="card__image">
@@ -18,8 +18,9 @@ class CharacterCard extends React.Component {
         );
     }
 }
-CharacterCard.propTypes={
-    character : PropTypes.object  
+
+CharacterCard.propTypes = {
+    character: PropTypes.object
 }
 
 export default CharacterCard;

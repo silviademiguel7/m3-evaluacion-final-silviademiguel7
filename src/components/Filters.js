@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 
 class Filters extends React.Component{
@@ -12,4 +13,9 @@ class Filters extends React.Component{
         );
     }
 }
+Filters.propTypes = {
+    inputTextFilter: PropTypes.string.isRequired,
+    handleOnChange: PropTypes.func.isRequired,
+}
+
 export default Filters;

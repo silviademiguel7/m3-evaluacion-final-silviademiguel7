@@ -14,10 +14,10 @@ class App extends React.Component {
       inputTextFilter: '',
     }
     this.getDataOfPetition = this.getDataOfPetition.bind(this);
-    this.handleOnChange = this.handleOnChange.bind(this)
+    this.handleOnChange = this.handleOnChange.bind(this);
   }
   componentDidMount() {
-    this.getDataOfPetition().then(data => this.setState({ characters: data.results }))
+    this.getDataOfPetition().then(data => this.setState({ characters: data.results }));
   }
   getDataOfPetition() {
     return (getData());
@@ -51,7 +51,6 @@ class App extends React.Component {
       </div>
     );
   }
-
 }
 
 export default App;

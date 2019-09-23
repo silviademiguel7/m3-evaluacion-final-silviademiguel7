@@ -21,10 +21,11 @@ class Landing extends React.Component {
         );
     }
 }
+
 CharacterList.propTypes = {
     characters: PropTypes.arrayOf(PropTypes.object).isRequired,
     inputTextFilter: PropTypes.string.isRequired,
-    handleOnChange: PropTypes.func.isRequired,
+    handleOnChange: PropTypes.func,
 }
 
 export default Landing;

@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../images/title-logo.png';
+
 class Header extends React.Component {
     render() {
         return (
@@ -9,4 +10,5 @@ class Header extends React.Component {
         );
     }
 }
+
 export default Header;

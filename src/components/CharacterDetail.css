@@ -1,0 +1,11 @@
+.container-detail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container-detail__card {
+  padding: 15px;
+  background-color: #00afc7;
+}
+
