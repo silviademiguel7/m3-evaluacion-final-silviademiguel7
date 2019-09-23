@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import Filters from './Filters';
 import CharacterList from './CharacterList';
 
-class Landing extends React.Component {
-    render() {
-        const { characters, inputTextFilter, handleOnChange } = this.props
+const Landing = (props) => {
+        const { characters, inputTextFilter, handleOnChange } = props;
         return (
             <main className="main">
                 <Filters
@@ -17,7 +16,6 @@ class Landing extends React.Component {
             </main>
         );
     }
-}
 
 CharacterList.propTypes = {
     characters: PropTypes.arrayOf(PropTypes.object).isRequired,

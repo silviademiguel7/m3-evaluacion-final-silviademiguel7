@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import './CharacterDetail.scss';
 import { Link } from 'react-router-dom';
 
-class CharacterDetail extends React.Component {
-    render() {
-        const { id, characters } = this.props;
+const CharacterDetail = (props) => {
+        const { id, characters } = props;
         const character = characters.find(character => {
             return (character.id === parseInt(id));
         });
@@ -45,7 +44,6 @@ class CharacterDetail extends React.Component {
             );
         }
     }
-}
 
 CharacterDetail.propTypes = {
     characters: PropTypes.arrayOf(PropTypes.object).isRequired,

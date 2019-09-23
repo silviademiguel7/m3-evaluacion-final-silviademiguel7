@@ -4,9 +4,8 @@ import './CharacterList.scss';
 import CharacterCard from './CharacterCard';
 import { Link } from 'react-router-dom';
 
-class CharacterList extends React.Component {
-    render() {
-        const { characters, inputTextFilter } = this.props
+const CharacterList = (props) => {
+        const { characters, inputTextFilter } = props
         return (
             <div className="results-container">
                 <ul className="results-list">
@@ -27,7 +26,6 @@ class CharacterList extends React.Component {
             </div>
         );
     }
-}
 
 CharacterList.propTypes = {
     characters: PropTypes.arrayOf(PropTypes.object).isRequired,

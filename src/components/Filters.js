@@ -2,9 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Filters.scss';
 
-class Filters extends React.Component {
-    render() {
-        const { handleOnChange, inputTextFilter } = this.props;
+const Filters = (props) => {
+        const { handleOnChange, inputTextFilter } = props;
         return (
             <div className="search-container__filterInput">
                 <label htmlFor="inputText"></label>
@@ -18,7 +17,6 @@ class Filters extends React.Component {
             </div>
         );
     }
-}
 
 Filters.propTypes = {
     inputTextFilter: PropTypes.string.isRequired,

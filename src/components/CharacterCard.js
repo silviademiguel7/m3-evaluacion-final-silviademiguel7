@@ -2,9 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './CharacterCard.scss';
 
-class CharacterCard extends React.Component {
-    render() {
-        const { character } = this.props;
+const CharacterCard = (props) => {
+        const { character } = props;
         return (
             <div className="card">
                 <div className="card__image">
@@ -19,7 +18,6 @@ class CharacterCard extends React.Component {
             </div>
         );
     }
-}
 
 CharacterCard.propTypes = {
     character: PropTypes.object
