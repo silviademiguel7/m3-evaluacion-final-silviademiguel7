@@ -1,9 +1,10 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import { getData } from './services/Petition';
-
-import Search from './components/Search';
-import CardsList from './components/CardsList';
+import Header from './components/Header';
+import Landing from './components/Landing';
+import Detail from './components/Detail';
 
 class App extends React.Component {
   constructor(props) {
@@ -30,11 +31,23 @@ class App extends React.Component {
     const { inputTextFilter, characters } = this.state;
     return (
       <div className="app">
-        <Search />
-        <CardsList characters={characters}
-          inputTextFilter={inputTextFilter}
-          handleOnChange={this.handleOnChange}
-        />
+        <Header/>
+        <Switch>
+          <Route exact path="/" render={() => {
+            return (
+              <Landing
+                characters={characters}
+                inputTextFilter={inputTextFilter}
+                handleOnChange={this.handleOnChange} />
+            );
+          }} />
+          <Route path="/character/:id" render={(routerProps) => {
+            return (
+              <Detail id={routerProps.match.params.id} characters={characters} />
+            );
+          }} />
+        </Switch>
+
       </div>
     );
   }

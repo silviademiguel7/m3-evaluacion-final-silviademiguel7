@@ -1,12 +1,14 @@
 import React from 'react';
-import logo from '../images/title-logo.png';
+
 
 class Search extends React.Component{
     render(){
+        const {handleOnChange,inputTextFilter}=this.props;
         return(
-            <header className="header">
-            <h1 className="tittle-pagpe"><img src={logo} alt="titulo de la pagina" /></h1>
-          </header>
+            <div className="search-container__filterInput">
+            <label htmlFor="inputText"></label>
+            <input type="text" name="inputText" id="inputText" placeholder="Filtra por nombre" onChange={handleOnChange} value={inputTextFilter} />
+        </div>
         );
     }
 }
