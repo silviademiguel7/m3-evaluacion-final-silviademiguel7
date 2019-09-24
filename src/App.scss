@@ -6,6 +6,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media all and (min-width: 640px) {
+    padding: 50px;
+ }
 }
 * {
   margin: 0px;
