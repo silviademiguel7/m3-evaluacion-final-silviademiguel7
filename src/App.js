@@ -12,9 +12,11 @@ class App extends React.Component {
     this.state = {
       characters: [],
       inputTextFilter: '',
+      genderFilter:'Todos',
     }
     this.getDataOfPetition = this.getDataOfPetition.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
+    this.filterByGender = this.filterByGender.bind(this);
   }
   componentDidMount() {
     this.getDataOfPetition().then(data => this.setState({ characters: data.results }));
@@ -24,11 +26,14 @@ class App extends React.Component {
   }
   handleOnChange(e) {
     const filterWord = e.currentTarget.value;
-    console.log(filterWord);
     this.setState({ inputTextFilter: filterWord });
   }
+  filterByGender(e){
+    const gender = e.currentTarget.value;
+    this.setState({genderFilter : gender});
+  }
   render() {
-    const { inputTextFilter, characters } = this.state;
+    const { inputTextFilter, characters, genderFilter } = this.state;
     return (
       <div className="app">
         <Header />
@@ -38,14 +43,17 @@ class App extends React.Component {
               <Landing
                 characters={characters}
                 inputTextFilter={inputTextFilter}
-                handleOnChange={this.handleOnChange} />
+                handleOnChange={this.handleOnChange}
+                filterByGender={this.filterByGender}
+                genderFilter={genderFilter} />
             );
           }} />
           <Route path="/character/:id" render={(routerProps) => {
             return (
               <CharacterDetail
                 id={routerProps.match.params.id}
-                characters={characters} />
+                characters={characters}
+                 />
             );
           }} />
         </Switch>

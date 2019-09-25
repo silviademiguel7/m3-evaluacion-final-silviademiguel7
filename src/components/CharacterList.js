@@ -5,13 +5,18 @@ import CharacterCard from './CharacterCard';
 import { Link } from 'react-router-dom';
 
 const CharacterList = (props) => {
-        const { characters, inputTextFilter } = props
+        const { characters, inputTextFilter,genderFilter } = props
         return (
             <div className="results-container">
                 <ul className="results-list">
                     {characters
                         .filter(item => {
                             return (item.name.toUpperCase().includes(inputTextFilter.toUpperCase()));
+                        })
+                        .filter( item =>{
+                            const genderAll = genderFilter === 'Todos';
+                            const filtergender = !genderAll  ? (genderFilter === item.gender) : true;
+                            return(filtergender )
                         })
                         .map(character => {
                             return (
