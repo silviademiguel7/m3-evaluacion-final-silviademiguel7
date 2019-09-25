@@ -4,14 +4,34 @@ import './CharacterList.scss';
 import CharacterCard from './CharacterCard';
 import { Link } from 'react-router-dom';
 
+
 const CharacterList = (props) => {
-        const { characters, inputTextFilter } = props
+        const { characters, inputTextFilter, genderFilter , specieFilter, statusFilter} = props
         return (
             <div className="results-container">
                 <ul className="results-list">
                     {characters
                         .filter(item => {
-                            return (item.name.toUpperCase().includes(inputTextFilter.toUpperCase()));
+                            let statusValid= true;
+                           
+                            if(statusFilter.length === 3 || statusFilter.length === 0){
+                                statusValid = true;
+                               
+                            }else{
+                                const indice = statusFilter.findIndex((i)=>{ return (item.status === i )});
+                                if(indice === -1 ){
+                                    statusValid = false;
+                                }
+                                else{
+                                    statusValid = true;
+                                }
+                            }
+                            const todos = (genderFilter === "Todos");
+                            const filterGender = !todos ? (item.gender === genderFilter) : true;
+                            const filterText = item.name.toUpperCase().includes(inputTextFilter.toUpperCase());
+                            const allspecie = specieFilter === "Todos";
+                            const filterSpecie = !allspecie ? (item.species === specieFilter) : true;
+                            return(filterGender && filterText && filterSpecie && statusValid ) ;  
                         })
                         .map(character => {
                             return (

@@ -12,10 +12,16 @@ class App extends React.Component {
     this.state = {
       characters: [],
       inputTextFilter: '',
+      genderFilter:'Todos',
+      specieFilter:'Todos',
+      statusFilter:[],
     }
     this.getDataOfPetition = this.getDataOfPetition.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
-  }
+    this.FilterByGender = this.FilterByGender.bind(this);
+    this.FilterBySpecie = this.FilterBySpecie.bind(this);
+    this.FilterByStatus = this.FilterByStatus.bind(this);
+    }
   componentDidMount() {
     this.getDataOfPetition().then(data => this.setState({ characters: data.results }));
   }
@@ -27,8 +33,32 @@ class App extends React.Component {
     console.log(filterWord);
     this.setState({ inputTextFilter: filterWord });
   }
+  FilterByGender(e){
+    const gender = e.currentTarget.value;
+    console.log(gender);
+    this.setState({genderFilter:gender})
+  }
+  FilterBySpecie(e){
+    const specie = e.currentTarget.value;
+    this.setState({specieFilter: specie},()=>{console.log(this.state.specieFilter)});
+    ;
+  }
+  FilterByStatus(e){
+    const status = e.currentTarget.value;
+    this.setState((prevState)=>{
+      const statusFilterNew = [...prevState.statusFilter];
+      const indice = statusFilterNew.findIndex((item)=> item === status );
+      if(indice === -1){
+        statusFilterNew.push(status)
+      }else{
+        statusFilterNew.splice(indice,1);
+      }
+      return {statusFilter: statusFilterNew} 
+      
+    },()=>{console.log(this.state.statusFilter)})
+  }
   render() {
-    const { inputTextFilter, characters } = this.state;
+    const { inputTextFilter, characters ,genderFilter, specieFilter, statusFilter} = this.state;
     return (
       <div className="app">
         <Header />
@@ -38,7 +68,14 @@ class App extends React.Component {
               <Landing
                 characters={characters}
                 inputTextFilter={inputTextFilter}
-                handleOnChange={this.handleOnChange} />
+                genderFilter={genderFilter}
+                FilterByGender={this.FilterByGender}
+                handleOnChange={this.handleOnChange}
+                specieFilter={specieFilter}
+                FilterBySpecie={this.FilterBySpecie}
+                statusFilter={statusFilter}
+                FilterByStatus={this.FilterByStatus}
+                 />
             );
           }} />
           <Route path="/character/:id" render={(routerProps) => {
