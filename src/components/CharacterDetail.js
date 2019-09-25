@@ -16,7 +16,7 @@ const CharacterDetail = (props) => {
                         <div className="container-detail__card">
                             <Link to="/">
                                 <div className="return">
-                                    <i class="fas fa-angle-left"></i>Volver
+                                    <i className="fas fa-angle-left"></i>Volver
                                 </div>
                             </Link>
                             <div className="card-image-detail">
